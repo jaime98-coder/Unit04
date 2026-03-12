@@ -1,17 +1,19 @@
 package exercisesB;
 
 public class Persona {
-	String dni;
-	String nombre;
-	String apellidos;
-	int edad;
-	boolean esMayorEdad;
-
-	Persona(String dni, String nombre, String apellidos, int edad, boolean esMayorEdad) {
+	private Persona(String dni, String nombre, String apellidos, int edad, boolean esMayorEdad) {
+		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.edad = edad;
 		this.esMayorEdad = esMayorEdad;
 	}
+	String dni;
+	String nombre;
+	String apellidos;
+	int edad;
+	boolean esMayorEdad;
+
+	
 }

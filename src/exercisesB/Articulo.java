@@ -2,7 +2,7 @@ package exercisesB;
 
 public class Articulo {
 	public Articulo(String nombre, double precio, int iva, int cuantosQuedan) {
-		super();
+
 		if (!nombre.isBlank()) {
 			this.nombre = nombre;
 		}

@@ -1,8 +1,7 @@
 package exercisesB;
 
 public class Persona {
-	private Persona(String dni, String nombre, String apellidos, int edad, boolean esMayorEdad) {
-		super();
+	public Persona(String dni, String nombre, String apellidos, int edad, boolean esMayorEdad) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;

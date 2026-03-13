@@ -5,10 +5,11 @@ import java.util.ArrayList;
 public class GestorAlumnos {
 	private ArrayList<Alumno> listaAlumnos;
 
-	public GestorAlumnos(ArrayList<Alumno> listaAlumnos) {
+	public GestorAlumnos() {
 
-		this.listaAlumnos = listaAlumnos;
+		this.listaAlumnos = new ArrayList<>();
 	}
+
 
 	public void mostrarListado() {
 		if (listaAlumnos.isEmpty()) {

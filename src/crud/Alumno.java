@@ -28,15 +28,14 @@ public class Alumno {
 	}
 
 	public void setNotaMedia(double notaMedia) {
-		this.notaMedia = notaMedia;
+		if (notaMedia >= 0 && notaMedia <= 10) {
+			this.notaMedia = notaMedia;
+		}
 	}
 
-	public void añadirAlumno() {
-
-	}
-
-	public void imprimirLista() {
-
+	@Override
+	public String toString() {
+		return "Alumno [nombre=" + nombre + ", notaMedia=" + notaMedia + "]";
 	}
 
 }

@@ -51,6 +51,7 @@ public class Principal {
 				nombreEntrada = sc.nextLine();
 				System.out.println("Nueva nota: ");
 				notaEntrada = sc.nextDouble();
+				sc.nextLine();
 
 				operacionExitosa = gestor.modificarAlumno(nombreEntrada, notaEntrada);
 				if (operacionExitosa) {

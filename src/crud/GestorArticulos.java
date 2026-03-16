@@ -28,7 +28,7 @@ public class GestorArticulos {
 	 * @param articulo. Articulo a añadir
 	 */
 	public void altaArticulo(Articulo articuloNuevo) {
-		if 
+		
 	}
 
 	/**

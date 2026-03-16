@@ -31,6 +31,7 @@ public class Hora {
 	 * @param minutos
 	 * @param segundos
 	 */
+	
 	public Hora() {
 		this.horas = 0;
 		this.minutos = 0;

@@ -1,20 +1,42 @@
 package crud;
 
 public class Articulo {
+	private String codigo;
 	private String nombre;
-	private double precio; // Precio sin impuestos
-	private int iva; // Representa el porcentaje
+	private double precioVenta;
+	private double precioCompra;
 	private int stock;
 
-	public Articulo(String nombre, double precio, int iva, int stock) {
+	/**
+	 * Crea un artículo con todos sus datos
+	 * 
+	 * @param codigo
+	 * @param nombre
+	 * @param precioVenta
+	 * @param precioCompra
+	 * @param stock
+	 */
+	public Articulo(String codigo, String nombre, double precioVenta, double precioCompra, int stock) {
+		setCodigo(codigo);
 		setNombre(nombre);
-		setPrecio(precio);
-		setIva(iva);
+		setPrecioVenta(precioVenta);
+		setPrecioCompra(precioCompra);
 		setStock(stock);
 	}
 
+	/**
+	 * Crea un artículo por defecto
+	 */
 	public Articulo() {
 
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -25,28 +47,20 @@ public class Articulo {
 		this.nombre = nombre;
 	}
 
-	public double getPrecio() {
-		return precio;
+	public double getPrecioVenta() {
+		return precioVenta;
 	}
 
-	public void setPrecio(double precio) {
-		if (precio >= 0) {
-			this.precio = precio;
-		} else {
-			this.precio = 0;
-		}
+	public void setPrecioVenta(double precioVenta) {
+		this.precioVenta = precioVenta;
 	}
 
-	public int getIva() {
-		return iva;
+	public double getPrecioCompra() {
+		return precioCompra;
 	}
 
-	public void setIva(int iva) {
-		if (iva >= 0 && iva <= 100) {
-			this.iva = iva;
-		} else {
-			this.iva = 21;
-		}
+	public void setPrecioCompra(double precioCompra) {
+		this.precioCompra = precioCompra;
 	}
 
 	public int getStock() {
@@ -55,16 +69,34 @@ public class Articulo {
 
 	public void setStock(int stock) {
 		this.stock = stock;
-		if (stock >= 0) {
-			this.stock = stock;
+	}
+
+	/**
+	 * Incrementa el sotck del articulo
+	 * 
+	 * @param cantidad numero de articulos que se añaden
+	 */
+	public void entradaMercancia(int cantidad) {
+		if (cantidad > 0) {
+			this.stock += cantidad;
+		} 
+	}
+
+	public boolean salidaMercancia(int cantidad) {
+		boolean esPosible = true;
+		if (cantidad > this.stock) {
+			esPosible = false;
 		} else {
-			this.stock = 0;
+			stock -= cantidad;
 		}
+
+		return esPosible;
+
 	}
 
 	@Override
 	public String toString() {
-		return "Articulo [nombre=" + nombre + ", precio=" + precio + ", iva=" + iva + ", stock=" + stock + "]";
+		return "Articulo [codigo=" + codigo + ", nombre=" + nombre + ", precioVenta=" + precioVenta + ", precioCompra="
+				+ precioCompra + ", stock=" + stock + "]";
 	}
-
 }

@@ -52,7 +52,9 @@ public class Articulo {
 	}
 
 	public void setPrecioVenta(double precioVenta) {
-		this.precioVenta = precioVenta;
+		if (precioVenta > 0) {
+			this.precioVenta = precioVenta;
+		}
 	}
 
 	public double getPrecioCompra() {
@@ -60,7 +62,9 @@ public class Articulo {
 	}
 
 	public void setPrecioCompra(double precioCompra) {
-		this.precioCompra = precioCompra;
+		if (precioCompra > 0) {
+			this.precioCompra = precioCompra;
+		}
 	}
 
 	public int getStock() {
@@ -68,7 +72,9 @@ public class Articulo {
 	}
 
 	public void setStock(int stock) {
-		this.stock = stock;
+		if (stock >= 0) {
+			this.stock = stock;
+		}
 	}
 
 	/**
@@ -76,23 +82,24 @@ public class Articulo {
 	 * 
 	 * @param cantidad numero de articulos que se añaden
 	 */
-	public void entradaMercancia(int cantidad) {
-		if (cantidad > 0) {
-			this.stock += cantidad;
-		} 
-	}
-
-	public boolean salidaMercancia(int cantidad) {
-		boolean esPosible = true;
-		if (cantidad > this.stock) {
-			esPosible = false;
-		} else {
-			stock -= cantidad;
-		}
-
-		return esPosible;
-
-	}
+	// Desactivado para que el gestor de articulos controle el stock
+//	public void entradaMercancia(int cantidad) {
+//		if (cantidad > 0) {
+//			this.stock += cantidad;
+//		} 
+//	}
+//
+//	public boolean salidaMercancia(int cantidad) {
+//		boolean esPosible = true;
+//		if (cantidad > this.stock) {
+//			esPosible = false;
+//		} else {
+//			stock -= cantidad;
+//		}
+//
+//		return esPosible;
+//
+//	}
 
 	@Override
 	public String toString() {

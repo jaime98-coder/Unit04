@@ -13,6 +13,20 @@ public class Pizza {
 		setEstado(estado);
 	}
 
+	/**
+	 * Constructor sin estado ,para que se cree por defecto en estado "pedida"
+	 * 
+	 * @param codigoPizza
+	 * @param tamano
+	 * @param tipo
+	 */
+	public Pizza(String codigoPizza, String tamano, String tipo) {
+		setCodigoPizza(codigoPizza);
+		setTamano(tamano);
+		setTipo(tipo);
+		this.estado = "Pedida";
+	}
+
 	public Pizza() {
 
 	}
@@ -34,6 +48,7 @@ public class Pizza {
 			this.tamano = tamano;
 		} else {
 			this.tamano = "Tamaño no válido";
+			System.out.println("ERROR. TAMAÑO NO VÁLIDO");
 		}
 	}
 
@@ -46,6 +61,7 @@ public class Pizza {
 			this.tipo = tipo;
 		} else {
 			this.tipo = "Tipo de pizza no válido";
+			System.out.println("ERROR. TIPO DE PIZZA NO VÁLIDO");
 		}
 	}
 
@@ -54,7 +70,18 @@ public class Pizza {
 	}
 
 	public void setEstado(String estado) {
-		this.estado = "Pedida";	
+		this.estado = estado;
+	}
+
+	public boolean servir() {
+		boolean esServida = false;
+		if (this.estado.equalsIgnoreCase("Pedida")) {
+			this.estado = "Servida";
+			esServida = true; // Se ha servido con éxito
+		} else {
+			esServida = false; // Error: Ya estaba servida o cancelada
+		}
+		return esServida;
 	}
 
 	@Override
@@ -62,6 +89,5 @@ public class Pizza {
 		return "Pizza [codigoPizza=" + codigoPizza + ", tamano=" + tamano + ", tipo=" + tipo + ", estado=" + estado
 				+ "]";
 	}
-	
 
 }

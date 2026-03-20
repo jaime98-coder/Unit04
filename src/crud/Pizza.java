@@ -13,6 +13,24 @@ public class Pizza {
 		setEstado(estado);
 	}
 
+	enum TipoPizza {
+		FAMILIAR, MEDIANA
+	}
+
+	// EXTRA IMPLEMENTACION ENUM
+	public boolean validarEnum(String cadena) {
+		boolean esValidado = false;
+		TipoPizza pedido;
+		cadena = cadena.trim();
+		for (TipoPizza tipo : TipoPizza.values()) {
+			if (tipo.name().equalsIgnoreCase(cadena)) {
+				esValidado = true;
+				break;
+			}
+		}
+		return esValidado;
+	}
+
 	/**
 	 * Constructor sin estado ,para que se cree por defecto en estado "pedida"
 	 * 

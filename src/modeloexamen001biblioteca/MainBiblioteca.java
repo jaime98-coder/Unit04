@@ -10,9 +10,7 @@ public class MainBiblioteca {
 		GestorLibros miGestorLibros = new GestorLibros();
 		GestorSocios miGestorSocio = new GestorSocios();
 		GestorPrestamos miGestorPrestamos = new GestorPrestamos();
-		int opcionMenu = 0;
-		int opcionSubMenu = 0;
-//		// Variables libros
+		//		// Variables libros
 //				String idLibro;
 //				String nombreLibro;
 //				int cantidadEjemplares;
@@ -22,6 +20,14 @@ public class MainBiblioteca {
 		String nombreSocio;
 		int numeroTelefono;
 
+		metodoMenu(miGestorLibros, miGestorSocio);
+		metodoMenu(miGestorLibros, miGestorSocio);
+		sc.close();
+	}
+
+	public static void metodoMenu(GestorLibros miGestorLibros, GestorSocios miGestorSocio) {
+		int opcionMenu;
+		int opcionSubMenu;
 		do {
 			System.out.println("BIENVENIDOS A LA BIBLIOTECA");
 			System.out.println("-------------------------");
@@ -94,8 +100,6 @@ public class MainBiblioteca {
 
 			}
 		} while (opcionMenu != 4);
-
-		sc.close();
 	}
 
 	public static void opcionesMenuLibro(int opcionSubMenu, GestorLibros miGestorLibros) {

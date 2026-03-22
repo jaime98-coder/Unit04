@@ -3,7 +3,7 @@ package modeloexamen003vehiculos;
 import java.util.ArrayList;
 
 public class ListaVehiculos {
-	ArrayList<Vehiculo> listaVehiculos;
+	private ArrayList<Vehiculo> listaVehiculos;
 
 	/**
 	 * Constructor para crear una lista de vehiculos (gestor de vehiculos)
